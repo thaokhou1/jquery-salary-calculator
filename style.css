@@ -109,3 +109,7 @@ body{
 .error{
     border: 1px solid red;
 }
+
+.budgetExceeds{
+    background-color:  red;
+}

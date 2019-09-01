@@ -1,6 +1,6 @@
 $(document).ready(readyNow);
 let employees=[];
-
+let amount=[];
 function person(firstName, lastName, id, job, salary){
     this.firstName= firstName;
     this.lastName= lastName;
@@ -56,6 +56,7 @@ function addPerson(){
     $('#jobTitle').val('');
     $('#annualSalary').val('');
     displayPeople();
+    total();
         }
 }
 
@@ -78,52 +79,45 @@ function displayPeople(){
 
 
 
+    
+    
+    function total(){
+        let totalAmount= 0;
+        for (let i = 0; i < employees.length; i++) {
+           totalAmount += Number(employees[i].salary);
+           console.log('totalAmount:', totalAmount);
+           let el = $(`#monthly`);
+           el.empty();
+           el.append(totalAmount);
+        
+        }
+        if (totalAmount >= 20000) {
+            $('#totalMonthlyCost').toggleClass('budgetExceeds');
+            alert("Budget of 20000 exceeded!")
+        }
+    }
+
+    // let num1= $(`#annualSalary`);
+    // let num2= $(`#annualSalary`);
+    // let totalAmount= parseInt(num1) + parseInt(num2);
+    // let totalAmount = 0;
+//     for (let i = 0; i < employees.length; i++) {
+//         totalAmount= Number(employees[i].salary);
+//         const monthlyTotal= totalAmount + amount
+//         let el = $(`#monthly`);
+    
+//         el.append ( totalAmount);
+      
+        
+//     // }
+// }}
 
 
 
 
 function readyNow(){
     $('#submitBtn').on('click', addPerson);
-
+    
 }
 
-
-// function redBox(){
-//     let employeeFirstName= ($('#firstName').val());
-//     let employeeLastName= ($('#lastName').val());
-//     let employeeIdNumber= ($('#idNumber').val());
-//     let employeeJobTitle= ($('#jobTitle').val());
-//     let employeeAnnualSalary= ($('#annualSalary').val());
-
-    // if(employeeFirstName === ''){
-    //     $(`#firstName`).addClass('error');
-    //     alert('Please fill out your first name')
-    // }
-    // else if(employeeLastName === ''){
-    //     $(`#lasttName`).addClass('error');
-    //     alert('Please fill out your last name')
-    // }
-    // else if(employeeIdNumber === ''){
-    //     $(`#idNumber`).addClass('error');
-    //     alert('Please fill out your Id Number')
-    // }
-    // else if(employeeJobTitle=== ''){
-    //     $(`#jobTitle`).addClass('error');
-    //     alert('Please fill out you job title')
-    // }
-    // else if(employeeAnnualSalary === ''){
-    //     $(`#annualSalary`).addClass('error');
-    //     alert('Please fill out your annual salary')
- 
-    // }
-    // else{
-    //     $('#firstName').removeClass('error');
-    //     $('#lastName').removeClass('error');
-    //     $('#idNumber').removeClass('error');
-    //     $('#jobTitle').removeClass('error');
-    //     $('#annualSalary').removeClass('error');
-
-    
-    
-    // }}
 
