@@ -11,8 +11,52 @@ function person(firstName, lastName, id, job, salary){
 
 function addPerson(){
     const newPerson = new person($(`#firstName`).val(), $(`#lastName`).val(), $(`#idNumber`).val(), $(`#jobTitle`).val(), $(`#annualSalary`).val() );
+    
+    let employeeFirstName= ($('#firstName').val());
+    let employeeLastName= ($('#lastName').val());
+    let employeeIdNumber= ($('#idNumber').val());
+    let employeeJobTitle= ($('#jobTitle').val());
+    let employeeAnnualSalary= ($('#annualSalary').val());
+    
+    if(employeeFirstName === ''){
+            $(`#firstName`).addClass('error');
+            alert('Please fill out your first name')
+        }
+        else if(employeeLastName === ''){
+            $(`#lasttName`).addClass('error');
+            alert('Please fill out your last name')
+        }
+        else if(employeeIdNumber === ''){
+            $(`#idNumber`).addClass('error');
+            alert('Please fill out your Id Number')
+        }
+        else if(employeeJobTitle=== ''){
+            $(`#jobTitle`).addClass('error');
+            alert('Please fill out you job title')
+        }
+        else if(employeeAnnualSalary === ''){
+            $(`#annualSalary`).addClass('error');
+            alert('Please fill out your annual salary')
+     
+        }
+        else{
+            $('#firstName').removeClass('error');
+            $('#lastName').removeClass('error');
+            $('#idNumber').removeClass('error');
+            $('#jobTitle').removeClass('error');
+            $('#annualSalary').removeClass('error');
+        
+    
+    
+    
     employees.push(newPerson);
+    $('#firstName').val('');
+    $('#lastName').val('');
+    $('#idNumber').val('');
+    $('#jobTitle').val('');
+    $('#annualSalary').val('');
     displayPeople();
+        }
 }
 
 function displayPeople(){
@@ -40,61 +84,46 @@ function displayPeople(){
 
 function readyNow(){
     $('#submitBtn').on('click', addPerson);
- 
+
 }
 
 
-// function handleSubmit(){
-//     // let employeeFirstName= ($('#firstName').val());
-//     // let employeeLastName= ($('#lastName').val());
-//     // let employeeIdNumber= ($('#idNumber').val());
-//     // let employeeJobTitle= ($('#jobTitle').val());
-//     // let employeeAnnualSalary= ($('#annualSalary').val());
+// function redBox(){
+//     let employeeFirstName= ($('#firstName').val());
+//     let employeeLastName= ($('#lastName').val());
+//     let employeeIdNumber= ($('#idNumber').val());
+//     let employeeJobTitle= ($('#jobTitle').val());
+//     let employeeAnnualSalary= ($('#annualSalary').val());
 
-//     // if(employeeFirstName === ''){
-//     //     $(`#firstName`).addClass('error');
-//     //     alert('Please fill out your first name')
-//     // }
-//     // else if(employeeLastName === ''){
-//     //     $(`#lasttName`).addClass('error');
-//     //     alert('Please fill out your last name')
-//     // }
-//     // else if(employeeIdNumber === ''){
-//     //     $(`#idNumber`).addClass('error');
-//     //     alert('Please fill out your Id Number')
-//     // }
-//     // else if(employeeJobTitle=== ''){
-//     //     $(`#jobTitle`).addClass('error');
-//     //     alert('Please fill out you job title')
-//     // }
-//     // else if(employeeAnnualSalary === ''){
-//     //     $(`#annualSalary`).addClass('error');
-//     //     alert('Please fill out your annual salary')
+    // if(employeeFirstName === ''){
+    //     $(`#firstName`).addClass('error');
+    //     alert('Please fill out your first name')
+    // }
+    // else if(employeeLastName === ''){
+    //     $(`#lasttName`).addClass('error');
+    //     alert('Please fill out your last name')
+    // }
+    // else if(employeeIdNumber === ''){
+    //     $(`#idNumber`).addClass('error');
+    //     alert('Please fill out your Id Number')
+    // }
+    // else if(employeeJobTitle=== ''){
+    //     $(`#jobTitle`).addClass('error');
+    //     alert('Please fill out you job title')
+    // }
+    // else if(employeeAnnualSalary === ''){
+    //     $(`#annualSalary`).addClass('error');
+    //     alert('Please fill out your annual salary')
  
-//     // }
-//     // else{
-//     //     $('#firstName').removeClass('error');
-//     //     $('#lastName').removeClass('error');
-//     //     $('#idNumber').removeClass('error');
-//     //     $('#jobTitle').removeClass('error');
-//     //     $('#annualSalary').removeClass('error');
+    // }
+    // else{
+    //     $('#firstName').removeClass('error');
+    //     $('#lastName').removeClass('error');
+    //     $('#idNumber').removeClass('error');
+    //     $('#jobTitle').removeClass('error');
+    //     $('#annualSalary').removeClass('error');
 
-//         let newObject={
-//         first: $('#firstName').val(),
-//         last: $('#lastName').val(),
-//         id: $('#idNumber').val(),
-//         job: $('#jobTitle').val(),
-//         salary: $('#annualSalary').val()
-//         };
-
-//         employee.push(newObject);
-//         $('#firstName').val('');
-//         $('#lastName').val('');
-//         $('#idNumber').val('');
-//         $('#jobTitle').val('');
-//         $('#annualSalary').val('');
-
-//     }
     
-
+    
+    // }}
 
