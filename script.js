@@ -57,11 +57,13 @@ function addPerson(){
     $('#annualSalary').val('');
     displayPeople();
     total();
+ 
+   
         }
 }
 
 function displayPeople(){
-   let el= $(`#firstTbody`);
+   let el= $(`#tBody`);
    el.empty();
    for (let i = 0; i < employees.length; i++) {
      let tr = `<tr>`+
@@ -73,6 +75,7 @@ function displayPeople(){
      `<td>` + ` <button>Delete</button>` + `</td>`+
     `</tr>`;
        el.append(tr);
+   
    }
 }
 
@@ -97,27 +100,17 @@ function displayPeople(){
         }
     }
 
-    // let num1= $(`#annualSalary`);
-    // let num2= $(`#annualSalary`);
-    // let totalAmount= parseInt(num1) + parseInt(num2);
-    // let totalAmount = 0;
-//     for (let i = 0; i < employees.length; i++) {
-//         totalAmount= Number(employees[i].salary);
-//         const monthlyTotal= totalAmount + amount
-//         let el = $(`#monthly`);
+ function deletePerson(){
+        $(this).closest('tBody').remove();
+    return
     
-//         el.append ( totalAmount);
-      
-        
-//     // }
-// }}
+}
 
 
 
 
 function readyNow(){
     $('#submitBtn').on('click', addPerson);
-    
-}
+    $('#deleteBtn').on('click', deletePerson);
 
-
+    }
