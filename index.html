@@ -10,44 +10,52 @@
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <header>
+ 
         <h1>Salary Calculator</h1>
-    </header>
+    
     <h2>Add Employee</h2>
-    <input id="firstName" type="text"/>
+    <input id="firstName" placeholder ="first" type="text"/>
     
     
-    <input id="lastName" type="text"/> 
+    <input id="lastName" placeholder="last" type="text"/> 
     
     
-    <input id="idNumber "type="text"/> 
+    <input id="idNumber" placeholder= "id" type="text"/> 
     
     
-    <input id="jobTitle" type="text"> 
+    <input id="jobTitle" placeholder="job" type="text"> 
     
     
-    <input id="annualSalary" type="text"/> 
+    <input id="annualSalary" placeholder="salary" type="text"/> 
     
 
     <button id="submitBtn">Submit</button>
     <table>
-    
-        <td id="firstNameTab">
-            <p>First Name</p>
-        </td> 
-        <td id="lastNameTab">
-            <p>Last Name</p>
-        </td>
-        <td id="idNumberTab">
-            <p>Id Number</p>
-        </td>
-        <td id="jobTitleTab">
-            <p>Job Title</p>
-        </td>
-        <td id="annualSalaryTab">
-            <p>Annual Salary<p>
-        </td>
-   
-    </table>
+         <thead>
+           <p>Employees</p>                    
+            <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>ID</th>
+            <th>Job Title</th>
+            <th>Annual Salary</th>
+            <th></th>
+            </tr>
+        </thead>
+        <tbody id="firstTbody">
+            <tr>
+            <td >Bob</td>
+            <td >Marriot</td>
+            <td >77765</td>
+            <td >Cook</td>
+            <td >65000</td>
+            <td>
+            <button>Delete</button>
+            </td>
+            </tr>
+        </tbody>
+        
+</table>
+<h2 id="monthly">Total Monthly:</h2>  
 </body>
 </html>
