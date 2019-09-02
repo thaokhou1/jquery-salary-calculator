@@ -57,7 +57,7 @@ function addPerson(){
     $('#annualSalary').val('');
     displayPeople();
     total();
- 
+    deletePerson();           
    
         }
 }
@@ -75,8 +75,10 @@ function displayPeople(){
      `<td>` + ` <button>Delete</button>` + `</td>`+
     `</tr>`;
        el.append(tr);
+    
    
    }
+   
 }
 
 
@@ -101,16 +103,16 @@ function displayPeople(){
     }
 
  function deletePerson(){
-        $(this).closest('tBody').remove();
-    return
-    
-}
+    $(`.deleteBtn`).parent().parent().remove();
+   
+     }
 
+    
 
 
 
 function readyNow(){
     $('#submitBtn').on('click', addPerson);
-    $('#deleteBtn').on('click', deletePerson);
+    $('.deleteBtn').on('click', deletePerson);
 
     }
