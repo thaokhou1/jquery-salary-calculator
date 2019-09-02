@@ -57,13 +57,13 @@ function addPerson(){
     $('#annualSalary').val('');
     displayPeople();
     total();
-    deletePerson();           
+             
    
         }
 }
 
 function displayPeople(){
-   let el= $(`#tBody`);
+   let el= $(`#employeesTable`);
    el.empty();
    for (let i = 0; i < employees.length; i++) {
      let tr = `<tr>`+
@@ -72,7 +72,7 @@ function displayPeople(){
      `<td>` + employees[i].id + `</td>` +
      `<td>` + employees[i].job + `</td>` +
      `<td>` + employees[i].salary +`</td>` +
-     `<td>` + ` <button>Delete</button>` + `</td>`+
+     `<td>` + ` <button class="deleteBtn">Delete</button>` + `</td>`+
     `</tr>`;
        el.append(tr);
     
@@ -103,7 +103,7 @@ function displayPeople(){
     }
 
  function deletePerson(){
-    $(`.deleteBtn`).parent().parent().remove();
+    $(this).parent().parent().remove();
    
      }
 
@@ -113,6 +113,6 @@ function displayPeople(){
 
 function readyNow(){
     $('#submitBtn').on('click', addPerson);
-    $('.deleteBtn').on('click', deletePerson);
+    $(`.deleteBtn`).on('click', deletePerson);
 
     }
